@@ -1,0 +1,301 @@
+Height map editor
+
+MIRAR FIGMA
+
+Hitos
+
+Visibilidad
+
+* Creación de una ventana visible
+* Ser capaz de ver el canvas abierto y/o creado
+* Poder seleccionar tamaño de canvas 2D
+* Capacidad para seleccionar archivos guardados de formatos PNG, JPG, JPEG
+* Capacidad de cargar archivos guardados
+
+Pintar
+
+* Reconocer el puntero del ratón cuando está encima del pixel 
+* Hacer una herramienta pincel (Keybind B)
+* Hacer una herramienta de selección (Forma cuadrada) (Keybind M)
+* Hacer una paleta de color de escala de grises
+* Hacer un selector de color dentro de la escala de grises
+
+UI
+
+* Botón Selección + Keybind M
+* Botón Pincel + Keybind B
+* Botón Guardar + Keybind G
+* Botón Abrir archivo + Keybind O
+* Área de dibujo rectangular a la derecha de la ventana, dejando un hueco a la izquierda para los botones
+* Barra de menu en la parte superior
+	File --> New, Open, Save, Export, Exit
+	Document --> Configuration
+		Max 3D height = what color
+		Min 3D height = what color
+	
+* Brush types
+	Paint
+	Reset -> Exact medium value	
+
+-------------------
+
+/*
+	
+	int16 pixel_amount;
+	
+	int16 current_zoom;
+	int16 new_zoom;
+	
+	Image loaded_image;
+	Pixel_data current_pixel;
+	
+	int16 numbered_zoom_change(int16 new_zoom)
+	{
+		current_zoom = new_zoom;
+	}
+	
+	//Is called if clicking && cursor is hovering image
+	//brush.is_clicking
+	//mouse.cursor.position.x > 0 && mouse.cursor.position.x < width
+	//mouse.cursor.position.y > 0 && mouse.cursor.position.x < height
+	
+	void apply_paint(Brush brush)
+	{
+		current_pixel.Color = brush.color;
+	}
+*/
+
+class Image
+{
+	int16 width;
+	int16 height;
+	int16 pixel_amount;
+	
+	void load_image()
+	{
+		
+	}
+	
+	void save_image()
+	{
+		
+	}
+}
+
+class Pixel_data
+{
+	Color color;
+	int16 x_position;
+	int16 y_position;
+}
+
+class Height_buffer
+{
+	vector <float> height_buffer;
+	
+	unsigned width;
+	unsigned height;
+	
+public:
+	
+	unsigned get_width() const;
+	unsigned get_height() const;
+	
+	float get_height_value (int x, int y)
+	{
+		return buffer[y * widen + x];
+	}
+	
+	void set_height_value (int x, int y, float new_height)
+	{
+		return buffer[y * widen + x] = new_height;
+	}
+	
+	enum get_mode ();
+};
+
+class Height_Map : Height_buffer
+{
+
+};
+
+class Brush : Height_buffer
+{
+	Color color;
+	bool is_clicking;
+	float roughness;
+	
+	enum apply_mode
+	{
+		Add = 1,
+		Subsract = 2,
+		Multiply = 3,
+		Replace = 4
+	};
+	
+	apply_mode mode;
+};
+
+class Map_Worker
+{
+	Height_Map * map;
+	
+public:
+
+	void apply_brush (cont Brush & brush, int center_x, int center_y)
+	{
+		int left_x = center_x - brush.get_width() / 2;
+		int top_y = center_y - brush.get_height() / 2;
+		
+		switch (brush.get_mode ())
+		{
+			case Brush::Add
+			{
+				map.set_height
+				(
+					left_x + x, 
+					top_y + y,
+					map.get_height (left_x + x, top_y + y) + brush.get_height (x, y)
+				);
+		
+				break;
+			}
+					
+			case Brush::Substract
+			{
+				map.set_height
+				(
+					left_x + x, 
+					top_y + y,
+					map.get_height (left_x + x, top_y + y) - brush.get_height (x, y)
+				);
+		
+				break;
+			}
+					
+			case Brush::Multiply
+			{
+				map.set_height
+				(
+					left_x + x, 
+					top_y + y,
+					map.get_height (left_x + x, top_y + y) * brush.get_height (x, y)
+				);
+		
+				break;
+			}
+					
+			case Brush::Replace
+			{
+				map.set_height
+				(
+					left_x + x, 
+					top_y + y,
+					brush.get_height (x, y)
+				);
+		
+				break;
+			}
+		}
+		
+		for (int y = 0; y < brush.get_height (); ++y)
+		{
+			for (int x = top_y y < brush.get_width(); ++ y)
+			{
+
+			}
+		}
+	}
+};
+
+class Color
+{
+	int16 R;
+	int16 G;
+	int16 B;
+	
+	Color(int16 greyscale_color)
+	{
+		R = greyscale_color;
+		G = greyscale_color;
+		B = greyscale_color;
+	}
+};
+
+/*
+
+	struct brush_size
+	{
+		int16 brush_width;
+		int16 brush_height;
+	}
+	
+	brush_size brush_data;
+	
+	enum brush_type
+	{
+		Paint = 1,
+		Reset = 2
+	}
+	
+	Brush(int16 grey_color)
+	{
+		color(grey_color);
+		is_clicking = false;
+	}
+*/
+
+class pixel_cuadricle
+{
+	int16 width;
+	int16 height;
+	int16 pixel_amount;
+	
+	int16 current_paint_x;
+	int16 current_paint_y;
+	int16 current_paint_total_pixels;
+	
+	pixel_cuadricle(int16 image_width, int16 image_height)
+	{
+		current_paint_x = 0;
+		current_paint_y = 0;
+		current_paint_total_pixels = 0;
+		width = image_width;
+		height = image_height;
+		pixel_amount = image_width * image_height;
+	}
+	
+	void paint_cuadricle()
+	{
+		//Paints cuadricle based on a 2D matrix (-1 to avoid painting on sides)
+		for (int current_paint_x = 0, current_paint_x < width - 1; ++current_paint_x)
+		{
+			for	(int current_paint_y = 0, current_paint_y < height - 1; ++current_paint_y)
+			{
+				//Paints cuadrice on x pixel right side
+				//Paints cuadrice on x pixel bottom side
+				++current_paint_total_pixels;
+			}
+		}
+	}
+	
+	void remove_cuadricle()
+	{
+		
+	}
+}
+
+class Color_selector
+{
+	Color current_color;
+	
+	Color_selector()
+	{
+		
+	}
+	
+	void change_color(Color color_to_change)
+	{
+		current_color = color_to_change;
+	}
+}
