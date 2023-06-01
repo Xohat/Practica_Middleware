@@ -1,0 +1,6 @@
+﻿  moc ..\..\code\MainWindow.hpp
+  main.cpp
+  MainWindow.cpp
+  qrc_resources.cpp
+  moc_MainWindow.cpp
+  OpenGL Example.vcxproj -> F:\Github\Practica_Middleware\OpenGL Example\projects\vs-2022\x64\Debug\OpenGL Example.exe
