@@ -1,0 +1,103 @@
+\doxysection{esne\+::Height\+Buffer Class Reference}
+\hypertarget{classesne_1_1_height_buffer}{}\label{classesne_1_1_height_buffer}\index{esne::HeightBuffer@{esne::HeightBuffer}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classesne_1_1_height_buffer_acfe4c26cad743bed9aeecca60eee9bcf}\label{classesne_1_1_height_buffer_acfe4c26cad743bed9aeecca60eee9bcf} 
+{\bfseries Height\+Buffer} (unsigned int width, unsigned int depth)
+\item 
+\Hypertarget{classesne_1_1_height_buffer_a1434f08d9f0e784d9c2cc4958f384153}\label{classesne_1_1_height_buffer_a1434f08d9f0e784d9c2cc4958f384153} 
+float {\bfseries get\+\_\+width} () const
+\item 
+float \mbox{\hyperlink{classesne_1_1_height_buffer_a27614d929c509c47ef889c8e7d4f35bc}{get\+\_\+height}} (int x, int z) const
+\begin{DoxyCompactList}\small\item\em Nota específica, en este proyecto height es representado por el color de los píxeles Este es su Getter. \end{DoxyCompactList}\item 
+\Hypertarget{classesne_1_1_height_buffer_ae759e4e28b602c9c17ce44f05539d19e}\label{classesne_1_1_height_buffer_ae759e4e28b602c9c17ce44f05539d19e} 
+float {\bfseries get\+\_\+depth} () const
+\item 
+void \mbox{\hyperlink{classesne_1_1_height_buffer_a4ac7f2be5e2f3fc9716a0e0b095e19ed}{set\+\_\+height}} (int x, int z, int new\+\_\+height)
+\begin{DoxyCompactList}\small\item\em Nota específica, en este proyecto height es representado por el color de los píxeles Este es su Setter. \end{DoxyCompactList}\item 
+\Hypertarget{classesne_1_1_height_buffer_ae241a713ca8a95137c2e4b15fdce1523}\label{classesne_1_1_height_buffer_ae241a713ca8a95137c2e4b15fdce1523} 
+void {\bfseries set\+\_\+path} (string new\+\_\+path)
+\item 
+\Hypertarget{classesne_1_1_height_buffer_aeb7b403def5389e5eb543b69b480793f}\label{classesne_1_1_height_buffer_aeb7b403def5389e5eb543b69b480793f} 
+string {\bfseries get\+\_\+path} () const
+\item 
+\Hypertarget{classesne_1_1_height_buffer_afedc0efc39295c27a7fb3e8f7a450efc}\label{classesne_1_1_height_buffer_afedc0efc39295c27a7fb3e8f7a450efc} 
+void {\bfseries set\+\_\+name} (string new\+\_\+name)
+\item 
+\Hypertarget{classesne_1_1_height_buffer_a1d4a4eda3bc9e0f6e023a4fa662b459d}\label{classesne_1_1_height_buffer_a1d4a4eda3bc9e0f6e023a4fa662b459d} 
+string {\bfseries get\+\_\+name} () const
+\item 
+\Hypertarget{classesne_1_1_height_buffer_a163ead08a89d2f9f00f5eb9cd05de27b}\label{classesne_1_1_height_buffer_a163ead08a89d2f9f00f5eb9cd05de27b} 
+void {\bfseries set\+\_\+width} (int given\+\_\+width)
+\item 
+\Hypertarget{classesne_1_1_height_buffer_a7c036faa0b497a6a1ad3fee18a8fff95}\label{classesne_1_1_height_buffer_a7c036faa0b497a6a1ad3fee18a8fff95} 
+void {\bfseries set\+\_\+depth} (int given\+\_\+depth)
+\item 
+void \mbox{\hyperlink{classesne_1_1_height_buffer_a26ff538484ebe84a7eaa155c1535ca69}{set\+\_\+buffer}} (int given\+\_\+width, int given\+\_\+height)
+\begin{DoxyCompactList}\small\item\em Para poder rehacer el buffer al obtener los datos de la imagen cargada. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classesne_1_1_height_buffer_a27614d929c509c47ef889c8e7d4f35bc}\label{classesne_1_1_height_buffer_a27614d929c509c47ef889c8e7d4f35bc} 
+\index{esne::HeightBuffer@{esne::HeightBuffer}!get\_height@{get\_height}}
+\index{get\_height@{get\_height}!esne::HeightBuffer@{esne::HeightBuffer}}
+\doxysubsubsection{\texorpdfstring{get\_height()}{get\_height()}}
+{\footnotesize\ttfamily float esne\+::\+Height\+Buffer\+::get\+\_\+height (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{z }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Nota específica, en este proyecto height es representado por el color de los píxeles Este es su Getter. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & \\
+\hline
+{\em z} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\Hypertarget{classesne_1_1_height_buffer_a26ff538484ebe84a7eaa155c1535ca69}\label{classesne_1_1_height_buffer_a26ff538484ebe84a7eaa155c1535ca69} 
+\index{esne::HeightBuffer@{esne::HeightBuffer}!set\_buffer@{set\_buffer}}
+\index{set\_buffer@{set\_buffer}!esne::HeightBuffer@{esne::HeightBuffer}}
+\doxysubsubsection{\texorpdfstring{set\_buffer()}{set\_buffer()}}
+{\footnotesize\ttfamily void esne\+::\+Height\+Buffer\+::set\+\_\+buffer (\begin{DoxyParamCaption}\item[{int}]{given\+\_\+width,  }\item[{int}]{given\+\_\+height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Para poder rehacer el buffer al obtener los datos de la imagen cargada. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em given\+\_\+width} & \\
+\hline
+{\em given\+\_\+height} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classesne_1_1_height_buffer_a4ac7f2be5e2f3fc9716a0e0b095e19ed}\label{classesne_1_1_height_buffer_a4ac7f2be5e2f3fc9716a0e0b095e19ed} 
+\index{esne::HeightBuffer@{esne::HeightBuffer}!set\_height@{set\_height}}
+\index{set\_height@{set\_height}!esne::HeightBuffer@{esne::HeightBuffer}}
+\doxysubsubsection{\texorpdfstring{set\_height()}{set\_height()}}
+{\footnotesize\ttfamily void esne\+::\+Height\+Buffer\+::set\+\_\+height (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{z,  }\item[{int}]{new\+\_\+height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Nota específica, en este proyecto height es representado por el color de los píxeles Este es su Setter. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & \\
+\hline
+{\em z} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+F\+:/\+Github/\+Practica\+\_\+\+Middleware/\+Middleware\+\_\+practica/code/\mbox{\hyperlink{_height_buffer_8h}{Height\+Buffer.\+h}}\end{DoxyCompactItemize}

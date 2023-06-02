@@ -1,0 +1,44 @@
+\doxysection{Image\+Loader.\+h}
+\hypertarget{_image_loader_8h_source}{}\label{_image_loader_8h_source}\index{F:/Github/Practica\_Middleware/Middleware\_practica/code/ImageLoader.h@{F:/Github/Practica\_Middleware/Middleware\_practica/code/ImageLoader.h}}
+\mbox{\hyperlink{_image_loader_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ Copyright\ (c)\ 2023\ Arturo\ /\ arturovilarc@gmail.com}}
+\DoxyCodeLine{00008\ \textcolor{comment}{//\ 2023.5\ -\/\ 2023.06}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}stb\_image.h"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}stb\_image\_resize.h"{}}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_height_buffer_8h}{HeightBuffer.h}}"{}}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{namespace\ }esne\ }
+\DoxyCodeLine{00018\ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classesne_1_1_image_loader}{ImageLoader}}}
+\DoxyCodeLine{00020\ \ \ \ \ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ width;}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ height;}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ channels;}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classesne_1_1_height_buffer}{HeightBuffer}}*\ current\_image\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classesne_1_1_height_buffer}{HeightBuffer}}(0,0);}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classesne_1_1_image_loader}{ImageLoader}}(\mbox{\hyperlink{classesne_1_1_height_buffer}{HeightBuffer}}\&\ given\_current\_image)}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ current\_image\ =\ \&given\_current\_image;}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classesne_1_1_image_loader_a0eb6f8d4dd0c5e11782abd8db61d5579}{load\_image}}();}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ change\_image(\mbox{\hyperlink{classesne_1_1_height_buffer}{HeightBuffer}}\&\ new\_image)}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ current\_image\ =\ \&new\_image;}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classesne_1_1_image_loader_a0eb6f8d4dd0c5e11782abd8db61d5579}{load\_image}}();}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classesne_1_1_image_loader_a0eb6f8d4dd0c5e11782abd8db61d5579}{load\_image}}();}
+\DoxyCodeLine{00046\ \ \ \ \ \};}
+\DoxyCodeLine{00047\ \}}
+
+\end{DoxyCode}

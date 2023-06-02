@@ -1,9 +1,5 @@
 \doxysection{esne\+::Main\+Window Class Reference}
 \hypertarget{classesne_1_1_main_window}{}\label{classesne_1_1_main_window}\index{esne::MainWindow@{esne::MainWindow}}
-
-
-{\ttfamily \#include $<$Main\+Window.\+hpp$>$}
-
 Inheritance diagram for esne\+::Main\+Window\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -19,7 +15,8 @@ void {\bfseries zoom\+Slider\+Changed} (int new\+Value)
 \Hypertarget{classesne_1_1_main_window_a15391ba52ae089a1b5c5d0a655b28384}\label{classesne_1_1_main_window_a15391ba52ae089a1b5c5d0a655b28384} 
 void {\bfseries menu\+File\+New\+Triggered} ()
 \item 
-void \mbox{\hyperlink{classesne_1_1_main_window_a884ed7820e9fb1be8b781c45f7e81cec}{menu\+File\+Open\+Triggered}} ()
+\Hypertarget{classesne_1_1_main_window_a884ed7820e9fb1be8b781c45f7e81cec}\label{classesne_1_1_main_window_a884ed7820e9fb1be8b781c45f7e81cec} 
+void {\bfseries menu\+File\+Open\+Triggered} ()
 \item 
 \Hypertarget{classesne_1_1_main_window_abfa84d39b70054e51a23baa07bbd69d8}\label{classesne_1_1_main_window_abfa84d39b70054e51a23baa07bbd69d8} 
 void {\bfseries menu\+File\+Save\+Triggered} ()
@@ -27,10 +24,8 @@ void {\bfseries menu\+File\+Save\+Triggered} ()
 \Hypertarget{classesne_1_1_main_window_a12956cd8968e8a46a02076437307fb8a}\label{classesne_1_1_main_window_a12956cd8968e8a46a02076437307fb8a} 
 void {\bfseries menu\+File\+Save\+As\+Triggered} ()
 \item 
-\Hypertarget{classesne_1_1_main_window_afadfe7dbe0b139a2256f9c39f1abad49}\label{classesne_1_1_main_window_afadfe7dbe0b139a2256f9c39f1abad49} 
-void {\bfseries zoom\+Change\+Text} (int new\+Value)
-\item 
-void \mbox{\hyperlink{classesne_1_1_main_window_af1de60f05f3309602c192bef925c6a0d}{menu\+Exit\+Triggered}} ()
+\Hypertarget{classesne_1_1_main_window_af1de60f05f3309602c192bef925c6a0d}\label{classesne_1_1_main_window_af1de60f05f3309602c192bef925c6a0d} 
+void {\bfseries menu\+Exit\+Triggered} ()
 \item 
 \Hypertarget{classesne_1_1_main_window_a23d286cb56e6d1adad900f82fcb84b9c}\label{classesne_1_1_main_window_a23d286cb56e6d1adad900f82fcb84b9c} 
 void {\bfseries zoom\+In} (int new\+Value)
@@ -38,44 +33,36 @@ void {\bfseries zoom\+In} (int new\+Value)
 \Hypertarget{classesne_1_1_main_window_ab4352393d5f8c2863d0971ef53be707a}\label{classesne_1_1_main_window_ab4352393d5f8c2863d0971ef53be707a} 
 void {\bfseries zoom\+Out} (int new\+Value)
 \item 
+\Hypertarget{classesne_1_1_main_window_afadfe7dbe0b139a2256f9c39f1abad49}\label{classesne_1_1_main_window_afadfe7dbe0b139a2256f9c39f1abad49} 
+void {\bfseries zoom\+Change\+Text} (int new\+Value)
+\item 
 \Hypertarget{classesne_1_1_main_window_a03ec4e3f4e06ed92146c618cc28f4773}\label{classesne_1_1_main_window_a03ec4e3f4e06ed92146c618cc28f4773} 
 void {\bfseries update\+Image\+Display} ()
+\item 
+\Hypertarget{classesne_1_1_main_window_a1239a46f7f72a76bc069a3c2e13710ad}\label{classesne_1_1_main_window_a1239a46f7f72a76bc069a3c2e13710ad} 
+void {\bfseries press\+Brush\+Button} ()
+\item 
+\Hypertarget{classesne_1_1_main_window_aa390bb12e18463d540e81abd14674e69}\label{classesne_1_1_main_window_aa390bb12e18463d540e81abd14674e69} 
+void {\bfseries mouse\+Press\+Event} (QMouse\+Event \texorpdfstring{$\ast$}{*}event) override
+\item 
+\Hypertarget{classesne_1_1_main_window_a8e123ac996b1b5ef7a2fbf198495ae7a}\label{classesne_1_1_main_window_a8e123ac996b1b5ef7a2fbf198495ae7a} 
+void {\bfseries paint\+Pixel} (\mbox{\hyperlink{classesne_1_1_height_buffer}{Height\+Buffer}} \&current\+\_\+image, float new\+\_\+color, int pixel\+\_\+x, int pixel\+\_\+y)
+\item 
+\Hypertarget{classesne_1_1_main_window_ad5459debe39ac6f5aed5a539035f2dd1}\label{classesne_1_1_main_window_ad5459debe39ac6f5aed5a539035f2dd1} 
+void {\bfseries Qt\+Load\+Image} (\mbox{\hyperlink{classesne_1_1_height_buffer}{Height\+Buffer}} \&current\+\_\+image)
+\item 
+\Hypertarget{classesne_1_1_main_window_a3cecda5cd7becd7828aa376791417fca}\label{classesne_1_1_main_window_a3cecda5cd7becd7828aa376791417fca} 
+void {\bfseries change\+\_\+color} ()
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classesne_1_1_main_window_a79315b486dd77133299bf6f466b0747c}{Main\+Window}} (QWidget \texorpdfstring{$\ast$}{*}parent=nullptr)
+\Hypertarget{classesne_1_1_main_window_a79315b486dd77133299bf6f466b0747c}\label{classesne_1_1_main_window_a79315b486dd77133299bf6f466b0747c} 
+{\bfseries Main\+Window} (QWidget \texorpdfstring{$\ast$}{*}parent=nullptr)
 \end{DoxyCompactItemize}
 
 
-\doxysubsection{Detailed Description}
-Esta es la ventana principal de la aplicación. Es la que se abre directamente cuando esta se inicia. Cuenta con una barra de menú y un widget central en el que se incrustan otros widgets. 
-
-\doxysubsection{Constructor \& Destructor Documentation}
-\Hypertarget{classesne_1_1_main_window_a79315b486dd77133299bf6f466b0747c}\label{classesne_1_1_main_window_a79315b486dd77133299bf6f466b0747c} 
-\index{esne::MainWindow@{esne::MainWindow}!MainWindow@{MainWindow}}
-\index{MainWindow@{MainWindow}!esne::MainWindow@{esne::MainWindow}}
-\doxysubsubsection{\texorpdfstring{MainWindow()}{MainWindow()}}
-{\footnotesize\ttfamily esne\+::\+Main\+Window\+::\+Main\+Window (\begin{DoxyParamCaption}\item[{QWidget \texorpdfstring{$\ast$}{*}}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})}
-
-Inicializa todos los widgets creados con Qt\+Designer e inserta el Open\+GLWidget dentro del widget \textquotesingle{}placeholder\textquotesingle{} que ya está puesto. También conecta algunas señales con los slots de la clase. 
-
-\doxysubsection{Member Function Documentation}
-\Hypertarget{classesne_1_1_main_window_af1de60f05f3309602c192bef925c6a0d}\label{classesne_1_1_main_window_af1de60f05f3309602c192bef925c6a0d} 
-\index{esne::MainWindow@{esne::MainWindow}!menuExitTriggered@{menuExitTriggered}}
-\index{menuExitTriggered@{menuExitTriggered}!esne::MainWindow@{esne::MainWindow}}
-\doxysubsubsection{\texorpdfstring{menuExitTriggered}{menuExitTriggered}}
-{\footnotesize\ttfamily void esne\+::\+Main\+Window\+::menu\+Exit\+Triggered (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [slot]}}
-
-Este método está conectado con la acción Exit del menú. Cierra la aplicación. \Hypertarget{classesne_1_1_main_window_a884ed7820e9fb1be8b781c45f7e81cec}\label{classesne_1_1_main_window_a884ed7820e9fb1be8b781c45f7e81cec} 
-\index{esne::MainWindow@{esne::MainWindow}!menuFileOpenTriggered@{menuFileOpenTriggered}}
-\index{menuFileOpenTriggered@{menuFileOpenTriggered}!esne::MainWindow@{esne::MainWindow}}
-\doxysubsubsection{\texorpdfstring{menuFileOpenTriggered}{menuFileOpenTriggered}}
-{\footnotesize\ttfamily void esne\+::\+Main\+Window\+::menu\+File\+Open\+Triggered (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
-
-Este método está conectado con la acción File / Open del menú. Abre un archivo de formato imagen soportado (). 
-
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-Main\+Window.\+hpp\item 
-Main\+Window.\+cpp\end{DoxyCompactItemize}
+F\+:/\+Github/\+Practica\+\_\+\+Middleware/\+Middleware\+\_\+practica/code/Main\+Window.\+hpp\item 
+F\+:/\+Github/\+Practica\+\_\+\+Middleware/\+Middleware\+\_\+practica/code/Main\+Window.\+cpp\end{DoxyCompactItemize}
