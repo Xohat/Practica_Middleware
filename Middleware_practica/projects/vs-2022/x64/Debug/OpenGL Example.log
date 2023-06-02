@@ -1,0 +1,4 @@
+﻿  ImageLoader.cpp
+  stb_image.cpp
+c1xx : fatal  error C1083: No se puede abrir el archivo origen: '..\..\libraries\stb_image.cpp': No such file or directory
+c1xx : fatal  error C1083: No se puede abrir el archivo origen: '..\..\code\ImageLoader.cpp': No such file or directory
