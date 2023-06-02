@@ -1,13 +1,26 @@
 #pragma once
 
 #include "Brush.h"
+#include <iostream>
 
-class RoundBrush : public Brush
+namespace esne 
 {
-public:
+    class RoundBrush : public Brush
+    {
+        int radius = 0;
 
-	RoundBrush(unsigned width, unsigned depth) : Brush(width, depth)
-	{
-		// rellenar el buffer con un círculo
-	}
-};
+    protected:
+
+    public:
+
+        RoundBrush(int width, int depth) : Brush(width, depth)
+        {
+
+        }
+
+        void setRadius(int new_radius)
+        {
+            radius = new_radius;
+        }
+    };
+}

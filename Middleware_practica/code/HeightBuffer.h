@@ -1,49 +1,101 @@
 #pragma once
 
 #include <vector>
+#include <string>
 
 using std::vector;
+using std::string;
 
-class HeightBuffer
+namespace esne
 {
-
-	unsigned width;
-	unsigned depth;
-
-	vector<float> buffer;
-
-public:
-
-	HeightBuffer(unsigned width, unsigned depth) : 
-		width(width),
-		depth(depth), 
-		buffer(width* depth)
+	//.myimagenisverygod
+	class HeightBuffer
 	{
-	}
+		unsigned width;
+		unsigned depth;
 
-	float get_width() const
-	{
-		return width;
-	}
+		string file_path = "";
+		string file_name = "";
+		vector<float> buffer;
 
-	float get_depth() const
-	{
-		return depth;
-	}
+		//offset = click_y * width * click_x
+		float offset = 0;
 
-	void set_height(int x, int z, int new_height)
-	{
-		if (x >= 0 && z >= 0 && x < width && z < depth)
+	public:
+
+		HeightBuffer(unsigned int width, unsigned int depth) :
+			width(width),
+			depth(depth),
+			buffer(width* depth)
 		{
-			buffer[x * depth + z] = new_height;
 		}
-	}
 
-	float get_height(int x, int z) const
-	{
-		if (x >= 0 && z >= 0 && x < width && z < depth)
+		float get_width() const
 		{
-			return buffer[x * depth + z];
+			return width;
 		}
-	}
-};
+
+		float get_height(int x, int z) const
+		{
+			if (x >= 0 && z >= 0 && x < width && z < depth)
+			{
+				return buffer[x * depth + z];
+			}
+			else
+			{
+				return 1.f; // Devuelve 1.f si el indice es invalido
+			}
+		}
+
+		float get_depth() const
+		{
+			return depth;
+		}
+
+		void set_height(int x, int z, int new_height)
+		{
+			if (x >= 0 && z >= 0 && x < width && z < depth)
+			{
+				buffer[x * depth + z] = new_height;
+			}
+		}
+
+		void set_path(string new_path)
+		{
+			file_path = new_path;
+		}
+		string get_path() const 
+		{
+			return file_path;
+		}
+
+		void set_name(string new_name)
+		{
+			file_name = new_name;
+		}
+		string get_name() const
+		{
+			return file_name;
+		}
+
+		void set_offset(int click_x, int click_y) 
+		{
+			offset = click_y * width * click_x;
+		}
+
+		void set_width(int given_width) 
+		{
+			width = given_width;
+		}
+
+		void set_depth(int given_depth) 
+		{
+			depth = given_depth;
+		}
+
+		void set_buffer(int given_width, int given_height) 		
+		{
+			buffer.resize(given_width * given_height);
+		}
+	};
+}

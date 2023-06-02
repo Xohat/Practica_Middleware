@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>671</width>
+    <width>631</width>
     <height>506</height>
    </rect>
   </property>
@@ -15,7 +15,7 @@
   </property>
   <widget class="QWidget" name="centralWidget">
    <property name="sizePolicy">
-    <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
      <horstretch>0</horstretch>
      <verstretch>0</verstretch>
     </sizepolicy>
@@ -31,6 +31,12 @@
            <layout class="QHBoxLayout" name="ImageShowerLayout">
             <item>
              <widget class="QLabel" name="placeholder">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
               <property name="autoFillBackground">
                <bool>true</bool>
               </property>
@@ -104,10 +110,13 @@
               <height>28</height>
              </size>
             </property>
+            <property name="shortcut">
+             <string notr="true"/>
+            </property>
            </widget>
           </item>
           <item>
-           <widget class="QPushButton" name="eraserPushButton">
+           <widget class="QPushButton" name="colorPushButton">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -127,6 +136,9 @@
               <height>28</height>
              </size>
             </property>
+            <property name="shortcut">
+             <string notr="true"/>
+            </property>
            </widget>
           </item>
          </layout>
@@ -142,16 +154,10 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>671</width>
+     <width>631</width>
      <height>22</height>
     </rect>
    </property>
-   <widget class="QMenu" name="menuMenu">
-    <property name="title">
-     <string>Menu</string>
-    </property>
-    <addaction name="actionExit"/>
-   </widget>
    <widget class="QMenu" name="menuFile">
     <property name="title">
      <string>File</string>
@@ -159,23 +165,9 @@
     <addaction name="actionNew"/>
     <addaction name="actionOpen"/>
     <addaction name="actionSave"/>
-    <addaction name="actionExport"/>
+    <addaction name="actionExit_2"/>
    </widget>
-   <widget class="QMenu" name="menuDocument">
-    <property name="title">
-     <string>Document</string>
-    </property>
-    <addaction name="actionConfiguration"/>
-   </widget>
-   <widget class="QMenu" name="menuAbout">
-    <property name="title">
-     <string>About</string>
-    </property>
-   </widget>
-   <addaction name="menuMenu"/>
    <addaction name="menuFile"/>
-   <addaction name="menuDocument"/>
-   <addaction name="menuAbout"/>
   </widget>
   <action name="actionExit">
    <property name="text">
@@ -197,14 +189,9 @@
     <string>Save</string>
    </property>
   </action>
-  <action name="actionExport">
+  <action name="actionExit_2">
    <property name="text">
-    <string>Export</string>
-   </property>
-  </action>
-  <action name="actionConfiguration">
-   <property name="text">
-    <string>Configuration</string>
+    <string>Exit</string>
    </property>
   </action>
  </widget>
