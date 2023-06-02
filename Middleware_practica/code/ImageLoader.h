@@ -1,3 +1,12 @@
+/**
+@file ImageLoader.h
+@brief Archivo encargado de cargar imagenes
+@author Arturo Vilar Carretero
+*/
+
+// Copyright (c) 2023 Arturo / arturovilarc@gmail.com
+// 2023.5 - 2023.06
+
 #pragma once
 
 #include "stb_image.h"

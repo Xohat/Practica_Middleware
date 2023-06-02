@@ -71,21 +71,14 @@
               <verstretch>0</verstretch>
              </sizepolicy>
             </property>
-            <property name="text">
-             <string>100%</string>
+            <property name="autoFillBackground">
+             <bool>true</bool>
             </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QLabel" name="ZoomLabel">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
+            <property name="styleSheet">
+             <string notr="true">Color:rgb(0, 0, 0)</string>
             </property>
             <property name="text">
-             <string>Zoom</string>
+             <string>100% Zoom</string>
             </property>
            </widget>
           </item>

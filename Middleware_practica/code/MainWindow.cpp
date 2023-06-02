@@ -1,7 +1,12 @@
 
-// Este código es de dominio público.
-// angel.rodriguez@esne.edu
-// 2023.05
+/**
+@file MainWindow.h
+@brief Archivo encargado la ventana principal con QT
+@author Arturo Vilar Carretero
+*/
+
+// Copyright (c) 2023 Arturo / arturovilarc@gmail.com
+// 2023.5 - 2023.06
 
 #include "MainWindow.hpp"
 
@@ -16,7 +21,7 @@ namespace esne
 
         //Tengo que inicializar las variables con algun valor
         current_image_HB = new HeightBuffer(0, 0);
-        new_brush = new RoundBrush(0, 0);
+        new_brush = new Brush(0, 0);
 
         //Aqui se concetan los botones de QT con las funciones de código
 

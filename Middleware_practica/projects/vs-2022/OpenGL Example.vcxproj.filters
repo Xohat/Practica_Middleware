@@ -45,7 +45,7 @@
     <ClCompile Include="..\..\code\ImageLoader.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\code\stb_image.cpp">
+    <ClCompile Include="..\..\libraries\stb_image.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -60,16 +60,10 @@
     </QtRcc>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\code\Blitter.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\code\Brush.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\code\HeightBuffer.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\code\RoundBrush.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\code\ImageController.h">
@@ -81,7 +75,7 @@
     <ClInclude Include="..\..\libraries\stb_image.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\code\stb_image_resize.h">
+    <ClInclude Include="..\..\libraries\stb_image_resize.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

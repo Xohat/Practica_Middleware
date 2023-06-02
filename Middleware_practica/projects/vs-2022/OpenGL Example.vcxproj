@@ -113,7 +113,7 @@
     <ClCompile Include="..\..\code\ImageLoader.cpp" />
     <ClCompile Include="..\..\code\main.cpp" />
     <ClCompile Include="..\..\code\MainWindow.cpp" />
-    <ClCompile Include="..\..\code\stb_image.cpp" />
+    <ClCompile Include="..\..\libraries\stb_image.cpp" />
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="..\..\ui\MainWindow.ui" />
@@ -122,14 +122,12 @@
     <QtRcc Include="..\..\resources\resources.qrc" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\code\Blitter.h" />
     <ClInclude Include="..\..\code\Brush.h" />
     <ClInclude Include="..\..\code\HeightBuffer.h" />
     <ClInclude Include="..\..\code\ImageController.h" />
     <ClInclude Include="..\..\code\ImageLoader.h" />
-    <ClInclude Include="..\..\code\RoundBrush.h" />
-    <ClInclude Include="..\..\code\stb_image_resize.h" />
     <ClInclude Include="..\..\libraries\stb_image.h" />
+    <ClInclude Include="..\..\libraries\stb_image_resize.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

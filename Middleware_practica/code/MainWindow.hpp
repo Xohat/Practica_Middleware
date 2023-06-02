@@ -1,7 +1,11 @@
+/**
+@file ImageLoader.h
+@brief Archivo encargado de representar la window principal
+@author Arturo Vilar Carretero
+*/
 
-// Este código es de dominio público.
-// angel.rodriguez@esne.edu
-// 2023.05
+// Copyright (c) 2023 Arturo / arturovilarc@gmail.com
+// 2023.5 - 2023.06
 
 #pragma once
 
@@ -14,9 +18,8 @@
 #include <QColorDialog>
 #include <QMouseEvent>
 
-#include "RoundBrush.h"
 #include "ImageLoader.h"
-#include "RoundBrush.h"
+#include "Brush.h"
 #include "ImageController.h"
 
 #include "ui_MainWindow.h"
@@ -24,12 +27,6 @@
 namespace esne
 {
 
-    class OpenGLWidget;
-
-    /** Esta es la ventana principal de la aplicación. Es la que se abre directamente cuando esta
-      * se inicia. Cuenta con una barra de menú y un widget central en el que se incrustan otros
-      * widgets.
-      */
     class MainWindow : public QMainWindow, public Ui::MainWindowClass
     {
         Q_OBJECT
@@ -73,7 +70,7 @@ namespace esne
 
         void zoomChangeText(int newValue)
         {
-            zoomLabelNumber->setText(QString::number(newValue) + "%");
+            zoomLabelNumber->setText(QString::number(newValue) + "% Zoom");
         }
 
         /** Este método está conectado con la acción Exit del menú. Cierra la aplicación.
@@ -154,23 +151,25 @@ namespace esne
 
     private:
 
-        QString file_path_;
+        //Zoom
         qreal scaleFactor = 1.0;
-        QImage image_to_load_Qt;
-
-        QPoint imageOffset;
-        bool dragging = false;
-        QPoint lastMousePos;
-
         int oldZoomValue = 0;
-        int width;
-        int height;
 
-        float new_color = 0;
-
-        RoundBrush* new_brush;
+        //Carga de imagenes
+        QString file_path_;
+        QImage image_to_load_Qt;
         HeightBuffer* current_image_HB;
         ImageLoader* image_loader = nullptr;
+        int width = 0;
+        int height = 0;
+
+        //Manejo de imagen
         ImageController* image_controller = nullptr;
+
+        //Configuración de la Brush
+        Brush* new_brush;
+        float new_color = 0;
+
+        
     };
 }

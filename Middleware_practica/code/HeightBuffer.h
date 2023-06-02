@@ -1,3 +1,12 @@
+/**
+@file HeightBuffer.h
+@brief Archivo encargado de crear un buffer de datos para las imagenes y ser el objetivo de las modificaciones a las mismas
+@author Arturo Vilar Carretero
+*/
+
+// Copyright (c) 2023 Arturo / arturovilarc@gmail.com
+// 2023.5 - 2023.06
+
 #pragma once
 
 #include <vector>
@@ -17,9 +26,6 @@ namespace esne
 		string file_path = "";
 		string file_name = "";
 		vector<float> buffer;
-
-		//offset = click_y * width * click_x
-		float offset = 0;
 
 	public:
 
@@ -76,11 +82,6 @@ namespace esne
 		string get_name() const
 		{
 			return file_name;
-		}
-
-		void set_offset(int click_x, int click_y) 
-		{
-			offset = click_y * width * click_x;
 		}
 
 		void set_width(int given_width) 

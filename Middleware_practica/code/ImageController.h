@@ -1,3 +1,12 @@
+/**
+@file ImageController.h
+@brief Archivo encargado de interactuar directamente con la imagen
+@author Arturo Vilar Carretero
+*/
+
+// Copyright (c) 2023 Arturo / arturovilarc@gmail.com
+// 2023.5 - 2023.06
+
 #pragma once
 
 #include "HeightBuffer.h"
