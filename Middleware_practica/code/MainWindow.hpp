@@ -67,14 +67,14 @@ namespace esne
 
         void zoomIn(int newValue)
         {
-            scaleFactor *= 1.1;
+            scaleFactor = 1 + newValue / 100.f;
             oldZoomValue = newValue;
             updateImageDisplay();
         }
 
         void zoomOut(int newValue)
         {
-            scaleFactor *= 0.9;
+            scaleFactor = 1 + newValue / 100.f;
             oldZoomValue = newValue;
             updateImageDisplay();
         }
@@ -86,6 +86,9 @@ namespace esne
         QString file_path_;
         QImage currentImage;
         qreal scaleFactor = 1.0;
+
         int oldZoomValue = 0;
+        float width;
+        float height;
     };
 }

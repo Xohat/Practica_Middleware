@@ -88,8 +88,12 @@ namespace esne
             // Scale pixmap to fit in label, maintaining aspect ratio.
             QPixmap pixmap = QPixmap::fromImage(currentImage).scaled(placeholder->width(), placeholder->height(),
                 Qt::KeepAspectRatio, Qt::SmoothTransformation);
+
             placeholder->setPixmap(pixmap);
             placeholder->setFixedSize(placeholder->size());
+
+            width = placeholder->width();
+            height = placeholder->height();
 
             // Align image to Center of QLabel
             placeholder->setAlignment(Qt::AlignCenter);
@@ -106,9 +110,9 @@ namespace esne
         if (placeholder && !currentImage.isNull())
         {
             // Scale pixmap to fit in label, maintaining aspect ratio.
-            QPixmap pixmap = QPixmap::fromImage(currentImage).scaled(placeholder->width() * scaleFactor,
-                placeholder->height() * scaleFactor,
-                Qt::KeepAspectRatio, Qt::SmoothTransformation);
+            QPixmap pixmap = QPixmap::fromImage(currentImage).scaled(width * scaleFactor,
+                                                                     height * scaleFactor,
+            Qt::KeepAspectRatio, Qt::SmoothTransformation);
 
             placeholder->setPixmap(pixmap);
         }

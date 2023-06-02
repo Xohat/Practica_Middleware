@@ -1,0 +1,84 @@
+\doxysection{Main\+Window.\+hpp}
+\hypertarget{_main_window_8hpp_source}{}\label{_main_window_8hpp_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Este\ código\ es\ de\ dominio\ público.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ angel.rodriguez@esne.edu}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ 2023.05}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <QtWidgets/QMainWindow>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <qfiledialog.h>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <QMessageBox>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <QTextEdit>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <QImage>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <QLabel>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <QPixmap>}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}ui\_MainWindow.h"{}}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{namespace\ }esne}
+\DoxyCodeLine{00019\ \{}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{class\ }OpenGLWidget;}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classesne_1_1_main_window}{MainWindow}}\ :\ \textcolor{keyword}{public}\ QMainWindow,\ \textcolor{keyword}{public}\ Ui::MainWindowClass}
+\DoxyCodeLine{00028\ \ \ \ \ \{}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classesne_1_1_main_window}{MainWindow}}(QWidget\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keyword}{public}\ slots:}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Estos\ métodos\ están\ conectados\ con\ las\ señales\ que\ emiten\ los\ sliders:}}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ zoomSliderChanged(\textcolor{keywordtype}{int}\ newValue);}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ menuFileNewTriggered()\ }
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ file\_path\_\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ actionNew-\/>setText(\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classesne_1_1_main_window_a884ed7820e9fb1be8b781c45f7e81cec}{menuFileOpenTriggered}}();}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ menuFileSaveTriggered();}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ menuFileSaveAsTriggered();}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ zoomChangeText(\textcolor{keywordtype}{int}\ newValue)}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ zoomLabelNumber-\/>setText(QString::number(newValue)\ +\ \textcolor{stringliteral}{"{}\%"{}});}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classesne_1_1_main_window_af1de60f05f3309602c192bef925c6a0d}{menuExitTriggered}}\ ()}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ QApplication::quit\ ();}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ zoomIn(\textcolor{keywordtype}{int}\ newValue)}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ scaleFactor\ *=\ 1.1;}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ oldZoomValue\ =\ newValue;}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ updateImageDisplay();}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ zoomOut(\textcolor{keywordtype}{int}\ newValue)}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ scaleFactor\ *=\ 0.9;}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ oldZoomValue\ =\ newValue;}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ updateImageDisplay();}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ updateImageDisplay();}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ QString\ file\_path\_;}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ QImage\ currentImage;}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ qreal\ scaleFactor\ =\ 1.0;}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ oldZoomValue\ =\ 0;}
+\DoxyCodeLine{00090\ \ \ \ \ \};}
+\DoxyCodeLine{00091\ \}}
+
+\end{DoxyCode}
