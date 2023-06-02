@@ -24,6 +24,13 @@ namespace esne
 			*current_image = given_image;
 		}
 
+		/// <summary>
+		/// Revisar el porque set_height dentro de HeightBuffer.h
+		/// </summary>
+		/// <param name="current_image"></param>
+		/// <param name="new_color"></param>
+		/// <param name="pixel_x"></param>
+		/// <param name="pixel_y"></param>
 		void paint(HeightBuffer& current_image, float new_color, int pixel_x, int pixel_y)
 		{
 			current_image.set_height(pixel_x, pixel_y, (int)new_color);

@@ -38,6 +38,10 @@ namespace esne
             load_image();
         }
 
+        /// <summary>
+        /// Carga la imagen por medio de la libreria stb_image.h
+        /// Detalles en el cpp
+        /// </summary>
         void load_image();
     };
 }

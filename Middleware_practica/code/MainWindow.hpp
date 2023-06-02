@@ -33,10 +33,8 @@ namespace esne
 
     public:
 
-        /** Inicializa todos los widgets creados con QtDesigner e inserta el OpenGLWidget dentro
-          * del widget 'placeholder' que ya está puesto. También conecta algunas señales con los
-          * slots de la clase.
-          */
+        //Inicializa todos los widgets creados con QtDesigner  
+        //y conecta las señales con los slots de la clase.
         MainWindow(QWidget *parent = nullptr);
 
     public slots:
@@ -44,6 +42,7 @@ namespace esne
         // Estos métodos están conectados con las señales que emiten los sliders:
         void zoomSliderChanged(int newValue);
 
+        // Activado al presionar el boton New dentro de File
         void menuFileNewTriggered() 
         {
             file_path_ = "";
@@ -62,24 +61,22 @@ namespace esne
             QtLoadImage(*current_image_HB);
         }
 
-        /** Este método está conectado con la acción File / Open del menú. Abre un archivo de formato imagen soportado ().
-          */
+        // Este método está conectado con la acción File / Open del menú. Abre un archivo de formato imagen soportado (.png, .jpg).
         void menuFileOpenTriggered();
+
+        // Guardar la misma imagen con la que estas trabajando ahora
         void menuFileSaveTriggered();
+
+        //Guardar la imagen actual en una localización que quieras y con el nombre que quieras
         void menuFileSaveAsTriggered();
 
-        void zoomChangeText(int newValue)
-        {
-            zoomLabelNumber->setText(QString::number(newValue) + "% Zoom");
-        }
-
-        /** Este método está conectado con la acción Exit del menú. Cierra la aplicación.
-          */
+        //Este método está conectado con la acción Exit del menú. Cierra la aplicación.
         void menuExitTriggered ()
         {
             QApplication::quit ();
         }
 
+        //Zoom
         void zoomIn(int newValue)
         {
             scaleFactor = 1 + newValue / 100.f;
@@ -94,15 +91,24 @@ namespace esne
             updateImageDisplay();
         }
 
+        void zoomChangeText(int newValue)
+        {
+            zoomLabelNumber->setText(QString::number(newValue) + "% Zoom");
+        }
+
+        //Para el zoom
         void updateImageDisplay();
 
+        //Te pone la brush como activa
         void pressBrushButton() 
         {
             new_brush->set_active();
         }
 
+        //Detetca el input del raton para pintar
         void mousePressEvent (QMouseEvent* event) override;
 
+        //Proceso iterado en mousePressEvent que lo llama tantas veces como partes tenga dentro de el width * height de la brush
         void paintPixel (HeightBuffer& current_image, float new_color, int pixel_x, int pixel_y)
         {
             if (image_controller == nullptr) 
@@ -115,8 +121,10 @@ namespace esne
             }
         }
 
+        //Función encargada de modificar la imagen por parte de QT
         void QtLoadImage (HeightBuffer& current_image);
 
+        //Función para el botón inferior para seleccionar el color para pintar
         void change_color() 
         {
             QColor color = QColorDialog::getColor(Qt::white, this, "Select a color, all colors must be the same value");
@@ -139,16 +147,6 @@ namespace esne
             }
         }
 
-        void set_brush_width() 
-        {
-
-        }
-
-        void set_brush_height()
-        {
-
-        }
-
     private:
 
         //Zoom
@@ -168,8 +166,6 @@ namespace esne
 
         //Configuración de la Brush
         Brush* new_brush;
-        float new_color = 0;
-
-        
+        float new_color = 0;     
     };
 }

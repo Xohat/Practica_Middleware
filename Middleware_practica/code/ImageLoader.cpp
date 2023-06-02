@@ -20,23 +20,24 @@ namespace esne
             return;
         }
 
-        // Set the width and height of the image in the HeightBuffer
+        // Se settea la width, la height y luego el espacio del 
+        // nuevo buffer mandanbdole los dos datos de width y height
         current_image->set_width(width);
         current_image->set_depth(height);
         current_image->set_buffer(width, height);
 
-        // Iterate through the image and set the height buffer values
+        // Itera en la imgen y settea los valores del height buffer
         for (int x = 0; x < width; x++)
         {
             for (int z = 0; z < height; z++)
             {
-                // Convert pixel value to height, this might need to be scaled depending on your use case
+                // Convierte el valor de pixeles en HeightBuffer.height
                 float new_height = static_cast<float>(img[x + width * z]);
                 current_image->set_height(x, z, new_height);
             }
         }
 
-        // Don't forget to free the image data
+        // Libera los datos tras esto
         stbi_image_free(img);
     }
 }

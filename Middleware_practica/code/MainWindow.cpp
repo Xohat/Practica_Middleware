@@ -26,16 +26,17 @@ namespace esne
         //Aqui se concetan los botones de QT con las funciones de código
 
         //Menu
-        connect (actionExit_2,    SIGNAL(triggered   (   )), this, SLOT(menuExitTriggered     (   )));
+        connect (actionExit_2,    SIGNAL(triggered   (   )), this, SLOT(menuExitTriggered       (   )));
 
         //File
-        connect (actionNew,       SIGNAL(triggered   (   )), this, SLOT(menuFileNewTriggered  (   )));
-        connect (actionOpen,      SIGNAL(triggered   (   )), this, SLOT(menuFileOpenTriggered (   )));
-        connect (actionSave,      SIGNAL(triggered   (   )), this, SLOT(menuFileSaveTriggered (   )));
+        connect (actionNew,       SIGNAL(triggered   (   )), this, SLOT(menuFileNewTriggered    (   )));
+        connect (actionOpen,      SIGNAL(triggered   (   )), this, SLOT(menuFileOpenTriggered   (   )));
+        connect (actionSave,      SIGNAL(triggered   (   )), this, SLOT(menuFileSaveTriggered   (   )));
+        connect (actionSave_As,   SIGNAL(triggered   (   )), this, SLOT(menuFileSaveAsTriggered (   )));
 
-        //Zoom
-        connect (zoomLabelNumber, SIGNAL(triggered   (   )), this, SLOT(zoomChangeText        (int)));
-        connect (zoomSlider,      SIGNAL(valueChanged(int)), this, SLOT(zoomSliderChanged     (int)));
+        //Zoom -> Deshabilitado por problemas con el refresco de la imagen
+        // connect (zoomLabelNumber, SIGNAL(triggered   (   )), this, SLOT(zoomChangeText        (int)));
+        // connect (zoomSlider,      SIGNAL(valueChanged(int)), this, SLOT(zoomSliderChanged     (int)));
 
         connect (brushPushButton, SIGNAL(clicked     (   )), this, SLOT(pressBrushButton      (   )));
         connect (colorPushButton, SIGNAL(clicked     (   )), this, SLOT(change_color          (   )));
@@ -47,11 +48,11 @@ namespace esne
 
     void MainWindow::zoomSliderChanged (int newValue)
     {
-        //ZOOM EN SI
+        //Efecto de Zoom
         if (oldZoomValue < newValue) zoomIn(newValue);
         else if (oldZoomValue > newValue) zoomOut(newValue);
 
-        //ZOOM TEXTO (VA 0 a 100)
+        //Texto de zoom
         if (newValue < 1) 
         {
             newValue = -1;
@@ -61,10 +62,7 @@ namespace esne
 
     void MainWindow::menuFileSaveTriggered()
     {
-        // Saving image
-        QString file_name_ = QFileDialog::getSaveFileName(this, "Save the file", "", "Images (*.png *.xpm *.jpg)");
-
-        if (!image_to_load_Qt.save(file_name_))
+        if (!image_to_load_Qt.save(QString::fromStdString(current_image_HB->get_path())))
         {
             QMessageBox::warning(this, ". .", "Failed saving image");
             return;
@@ -89,7 +87,7 @@ namespace esne
         QString file_name_ = QFileDialog::getOpenFileName(this, "Open the file", "", "Images (*.png *.xpm *.jpg)");
         current_image_HB->set_path(file_name_.toStdString());
 
-        // Create an ImageLoader and load the image into the height buffer if necessary
+        // Crea un Image loader si no existe y si existe cambia la imagen actual por la nueva
         if (image_loader == nullptr)
         {
             image_loader = new ImageLoader(*current_image_HB);
@@ -163,17 +161,17 @@ namespace esne
 
         if (placeholder)
         {
-            // Get the current pixmap
+            // Obtiene la imagen actual
             QPixmap pixmap = placeholder->pixmap();
 
             if (!pixmap.isNull())
             {
-                // Calculate the offset due to center alignment
+                // Calcula el offset por el AlignmenctCenter
                 int xOffset = (placeholder->width() - pixmap.width()) / 2;
                 int yOffset = (placeholder->height() - pixmap.height()) / 2;
 
-                // Convert the mouse position from label coordinates to pixmap coordinates
-                // 12 and 34 seem to be standard deviations
+                // Convierte la posicion de raton en posición de imagen
+                // Parece haber desviaciones standard de 12 y 34
                 int x = ((event->x() - xOffset) / scaleFactor);
                 int y = ((event->y() - yOffset) / scaleFactor);
 
@@ -183,22 +181,24 @@ namespace esne
                 int clickX = event->x();
                 int clickY = event->y();
 
-                // Check if the mouse click is within the pixmap
+                // Comprueba si el click esta dentro de la width de la imagen (Requisito para poder pintar)
                 if (x >= 0 && y >= 0 && x < pixmap.width() && y < pixmap.height())
                 {
-                    // Now (x, y) are the coordinates relative to the image/HeightBuffer
+                    // Esto hace las coordenadas de x e y relativas a la imagen
                     qDebug() << "Mouse clicked at pixmap coordinates:" << x << y;
 
-                    //AQUI VA EL PAINT
+                    // Proceso de paint
+                    // Si la brocha no esta activa no se puede pintar
                     if (new_brush->get_active())
                     {
                         //Pinta
-                        //current_image_HB
                         qDebug() << "Painting started on pixel(" << x << "," << y << ")";
 
+                        //Se settea un width y un height estandar
                         new_brush->set_width(20);
                         new_brush->set_height(20);
 
+                        //Se itera por todos los pixeles del tamaño de la brush
                         for (int i = 0; i < new_brush->get_width(); i++)
                         {
                             for (int j = 0; j < new_brush->get_height(); j++)
@@ -207,6 +207,7 @@ namespace esne
                             }
                         }
 
+                        //Tras haber pintado todos los pixeles se actualiza la imagen de manera visual en QT
                         QtLoadImage(*current_image_HB);
                     }
                     else
