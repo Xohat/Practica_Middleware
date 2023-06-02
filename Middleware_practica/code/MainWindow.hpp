@@ -6,6 +6,12 @@
 #pragma once
 
 #include <QtWidgets/QMainWindow>
+#include <qfiledialog.h>
+#include <QMessageBox>
+#include <QTextEdit>
+#include <QImage>
+#include <QLabel>
+#include <QPixmap>
 
 #include "ui_MainWindow.h"
 
@@ -32,11 +38,24 @@ namespace esne
 
     public slots:
 
+        // Estos métodos están conectados con las señales que emiten los sliders:
+        void zoomSliderChanged(int newValue);
+
+        void menuFileNewTriggered() 
+        {
+            file_path_ = "";
+            actionNew->setText("");
+        }
+
         /** Este método está conectado con la acción File / Open del menú. Abre un archivo de formato imagen soportado ().
           */
-        void menuFileOpenTriggered()
+        void menuFileOpenTriggered();
+        void menuFileSaveTriggered();
+        void menuFileSaveAsTriggered();
+
+        void zoomChangeText(int newValue)
         {
-            
+            zoomLabelNumber->setText(QString::number(newValue) + "%");
         }
 
         /** Este método está conectado con la acción Exit del menú. Cierra la aplicación.
@@ -46,12 +65,27 @@ namespace esne
             QApplication::quit ();
         }
 
-        // Estos métodos están conectados con las señales que emiten los sliders:
+        void zoomIn(int newValue)
+        {
+            scaleFactor *= 1.1;
+            oldZoomValue = newValue;
+            updateImageDisplay();
+        }
 
-        void xRotationSliderChanged (int newValue);
-        void yRotationSliderChanged (int newValue);
-        void zRotationSliderChanged (int newValue);
+        void zoomOut(int newValue)
+        {
+            scaleFactor *= 0.9;
+            oldZoomValue = newValue;
+            updateImageDisplay();
+        }
 
-        void zoomChangeText(int newValue);    
+        void updateImageDisplay();
+
+    private:
+
+        QString file_path_;
+        QImage currentImage;
+        qreal scaleFactor = 1.0;
+        int oldZoomValue = 0;
     };
 }

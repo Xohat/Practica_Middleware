@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/MainWindow"/>
+    <qresource prefix="/Resource">
+        <file>brush.png</file>
+        <file>eraser.png</file>
+    </qresource>
+</RCC>
