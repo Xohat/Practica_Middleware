@@ -9,6 +9,5 @@ protected:
 
 	Brush(unsigned width, unsigned depth) : HeightBuffer(width, depth)
 	{
-
 	}
 };

@@ -58,14 +58,14 @@
 \DoxyCodeLine{00067\ }
 \DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ zoomIn(\textcolor{keywordtype}{int}\ newValue)}
 \DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ scaleFactor\ *=\ 1.1;}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ scaleFactor\ =\ 1\ +\ newValue\ /\ 100.f;}
 \DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ oldZoomValue\ =\ newValue;}
 \DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ updateImageDisplay();}
 \DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{00074\ }
 \DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ zoomOut(\textcolor{keywordtype}{int}\ newValue)}
 \DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ scaleFactor\ *=\ 0.9;}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ scaleFactor\ =\ 1\ +\ newValue\ /\ 100.f;}
 \DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ oldZoomValue\ =\ newValue;}
 \DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ updateImageDisplay();}
 \DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \}}
@@ -77,8 +77,11 @@
 \DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ QString\ file\_path\_;}
 \DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ QImage\ currentImage;}
 \DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ qreal\ scaleFactor\ =\ 1.0;}
-\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ oldZoomValue\ =\ 0;}
-\DoxyCodeLine{00090\ \ \ \ \ \};}
-\DoxyCodeLine{00091\ \}}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ oldZoomValue\ =\ 0;}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ width;}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ height;}
+\DoxyCodeLine{00093\ \ \ \ \ \};}
+\DoxyCodeLine{00094\ \}}
 
 \end{DoxyCode}

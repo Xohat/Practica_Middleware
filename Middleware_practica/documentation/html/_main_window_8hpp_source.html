@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.7"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Project: MainWindow.hpp Source File</title>
+<title>Practica Middleware: MainWindow.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">My Project
+   <div id="projectname">Practica Middleware
    </div>
   </td>
  </tr>
@@ -129,14 +129,14 @@ $(function() {
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        <span class="keywordtype">void</span> zoomIn(<span class="keywordtype">int</span> newValue)</div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        {</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>            scaleFactor *= 1.1;</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>            scaleFactor = 1 + newValue / 100.f;</div>
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>            oldZoomValue = newValue;</div>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>            updateImageDisplay();</div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        }</div>
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
 <div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        <span class="keywordtype">void</span> zoomOut(<span class="keywordtype">int</span> newValue)</div>
 <div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        {</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>            scaleFactor *= 0.9;</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>            scaleFactor = 1 + newValue / 100.f;</div>
 <div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>            oldZoomValue = newValue;</div>
 <div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>            updateImageDisplay();</div>
 <div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        }</div>
@@ -148,9 +148,12 @@ $(function() {
 <div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        QString file_path_;</div>
 <div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        QImage currentImage;</div>
 <div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>        qreal scaleFactor = 1.0;</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        <span class="keywordtype">int</span> oldZoomValue = 0;</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    };</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>}</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        <span class="keywordtype">int</span> oldZoomValue = 0;</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>        <span class="keywordtype">float</span> width;</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        <span class="keywordtype">float</span> height;</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    };</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>}</div>
 <div class="ttc" id="aclassesne_1_1_main_window_html"><div class="ttname"><a href="classesne_1_1_main_window.html">esne::MainWindow</a></div><div class="ttdef"><b>Definition</b> MainWindow.hpp:28</div></div>
 <div class="ttc" id="aclassesne_1_1_main_window_html_a884ed7820e9fb1be8b781c45f7e81cec"><div class="ttname"><a href="classesne_1_1_main_window.html#a884ed7820e9fb1be8b781c45f7e81cec">esne::MainWindow::menuFileOpenTriggered</a></div><div class="ttdeci">void menuFileOpenTriggered()</div><div class="ttdef"><b>Definition</b> MainWindow.cpp:74</div></div>
 <div class="ttc" id="aclassesne_1_1_main_window_html_af1de60f05f3309602c192bef925c6a0d"><div class="ttname"><a href="classesne_1_1_main_window.html#af1de60f05f3309602c192bef925c6a0d">esne::MainWindow::menuExitTriggered</a></div><div class="ttdeci">void menuExitTriggered()</div><div class="ttdef"><b>Definition</b> MainWindow.hpp:63</div></div>
