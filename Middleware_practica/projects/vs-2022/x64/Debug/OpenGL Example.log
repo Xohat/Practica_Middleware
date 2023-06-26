@@ -1,1 +1,12 @@
-﻿  OpenGL Example.vcxproj -> F:\Github\Practica_Middleware\Middleware_practica\projects\vs-2022\x64\Debug\OpenGL Example.exe
+﻿  ImageLoader.cpp
+F:\Github\Practica_Middleware\Middleware_practica\code\ImageLoader.cpp(1,1): warning C4828: El archivo contiene un carácter que comienza en el desplazamiento 0x2f y que no es válido en el juego de caracteres del origen actual (página de códigos 65001).
+F:\Github\Practica_Middleware\Middleware_practica\code\HeightBuffer.h(1,1): warning C4828: El archivo contiene un carácter que comienza en el desplazamiento 0x305 y que no es válido en el juego de caracteres del origen actual (página de códigos 65001).
+F:\Github\Practica_Middleware\Middleware_practica\code\HeightBuffer.h(1,1): warning C4828: El archivo contiene un carácter que comienza en el desplazamiento 0x350 y que no es válido en el juego de caracteres del origen actual (página de códigos 65001).
+F:\Github\Practica_Middleware\Middleware_practica\code\HeightBuffer.h(1,1): warning C4828: El archivo contiene un carácter que comienza en el desplazamiento 0x508 y que no es válido en el juego de caracteres del origen actual (página de códigos 65001).
+F:\Github\Practica_Middleware\Middleware_practica\code\HeightBuffer.h(1,1): warning C4828: El archivo contiene un carácter que comienza en el desplazamiento 0x553 y que no es válido en el juego de caracteres del origen actual (página de códigos 65001).
+F:\Github\Practica_Middleware\Middleware_practica\code\ImageLoader.cpp(12,19): warning C4273: 'ImageLoader::load_image': vinculación de DLL incoherente
+F:\Github\Practica_Middleware\Middleware_practica\code\ImageLoader.h(43,10): message : vea la definición anterior de 'load_image'
+     Creando biblioteca F:\Github\Practica_Middleware\Middleware_practica\projects\vs-2022\x64\Debug\OpenGL Example.lib y objeto F:\Github\Practica_Middleware\Middleware_practica\projects\vs-2022\x64\Debug\OpenGL Example.exp
+MainWindow.obj : error LNK2019: símbolo externo "public: void __cdecl esne::ImageLoader::load_image(void)" (?load_image@ImageLoader@esne@@QEAAXXZ) sin resolver al que se hace referencia en la función "public: __cdecl esne::ImageLoader::ImageLoader(class esne::HeightBuffer &)" (??0ImageLoader@esne@@QEAA@AEAVHeightBuffer@1@@Z)
+moc_MainWindow.obj : error LNK2001: símbolo externo "public: void __cdecl esne::ImageLoader::load_image(void)" (?load_image@ImageLoader@esne@@QEAAXXZ) sin resolver
+F:\Github\Practica_Middleware\Middleware_practica\projects\vs-2022\x64\Debug\OpenGL Example.exe : fatal error LNK1120: 1 externos sin resolver

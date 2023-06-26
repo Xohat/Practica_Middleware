@@ -11,116 +11,114 @@
 
 #include <vector>
 #include <string>
+#include "API.h"
 
 using std::vector;
 using std::string;
 
-namespace esne
+class API HeightBuffer
 {
-	class HeightBuffer
+	unsigned width;
+	unsigned depth;
+
+	string file_path = "";
+	string file_name = "";
+	vector<float> buffer;
+
+public:
+
+	//Constructor
+	HeightBuffer(unsigned int width, unsigned int depth) :
+		width(width),
+		depth(depth),
+		buffer(width* depth)
 	{
-		unsigned width;
-		unsigned depth;
+	}
 
-		string file_path = "";
-		string file_name = "";
-		vector<float> buffer;
+	//Getters
+	float get_width() const
+	{
+		return width;
+	}
 
-	public:
+	/// <summary>
+	/// Nota específica, en este proyecto 
+	/// height es representado por el color de los píxeles
+	/// Este es su Getter
+	/// </summary>
+	/// <param name="x"></param>
+	/// <param name="z"></param>
+	/// <returns></returns>
+	float get_height(int x, int z) const
+	{
+		if (x >= 0 && z >= 0 && x < width && z < depth)
+		{
+			return buffer[x * depth + z];
+		}
+		else
+		{
+			return 1.f; // Devuelve 1.f si el indice es invalido
+		}
+	}
 
-		//Constructor
-		HeightBuffer(unsigned int width, unsigned int depth) :
-			width(width),
-			depth(depth),
-			buffer(width* depth)
-		{
-		}
+	float get_depth() const
+	{
+		return depth;
+	}
 
-		//Getters
-		float get_width() const
+	/// <summary>
+	/// Nota específica, en este proyecto 
+	/// height es representado por el color de los píxeles
+	/// Este es su Setter
+	/// </summary>
+	/// <param name="x"></param>
+	/// <param name="z"></param>
+	/// <returns></returns>
+	void set_height(int x, int z, int new_height)
+	{
+		if (x >= 0 && z >= 0 && x < width && z < depth)
 		{
-			return width;
+			buffer[x * depth + z] = new_height;
 		}
+	}
 
-		/// <summary>
-		/// Nota específica, en este proyecto 
-		/// height es representado por el color de los píxeles
-		/// Este es su Getter
-		/// </summary>
-		/// <param name="x"></param>
-		/// <param name="z"></param>
-		/// <returns></returns>
-		float get_height(int x, int z) const
-		{
-			if (x >= 0 && z >= 0 && x < width && z < depth)
-			{
-				return buffer[x * depth + z];
-			}
-			else
-			{
-				return 1.f; // Devuelve 1.f si el indice es invalido
-			}
-		}
+	//Relacionado con el path
+	void set_path(string new_path)
+	{
+		file_path = new_path;
+	}
+	string get_path() const
+	{
+		return file_path;
+	}
 
-		float get_depth() const
-		{
-			return depth;
-		}
+	//Relacionado con el name
+	void set_name(string new_name)
+	{
+		file_name = new_name;
+	}
+	string get_name() const
+	{
+		return file_name;
+	}
 
-		/// <summary>
-		/// Nota específica, en este proyecto 
-		/// height es representado por el color de los píxeles
-		/// Este es su Setter
-		/// </summary>
-		/// <param name="x"></param>
-		/// <param name="z"></param>
-		/// <returns></returns>
-		void set_height(int x, int z, int new_height)
-		{
-			if (x >= 0 && z >= 0 && x < width && z < depth)
-			{
-				buffer[x * depth + z] = new_height;
-			}
-		}
+	void set_width(int given_width)
+	{
+		width = given_width;
+	}
 
-		//Relacionado con el path
-		void set_path(string new_path)
-		{
-			file_path = new_path;
-		}
-		string get_path() const 
-		{
-			return file_path;
-		}
+	void set_depth(int given_depth)
+	{
+		depth = given_depth;
+	}
 
-		//Relacionado con el name
-		void set_name(string new_name)
-		{
-			file_name = new_name;
-		}
-		string get_name() const
-		{
-			return file_name;
-		}
-
-		void set_width(int given_width) 
-		{
-			width = given_width;
-		}
-
-		void set_depth(int given_depth) 
-		{
-			depth = given_depth;
-		}
-
-		/// <summary>
-		/// Para poder rehacer el buffer al obtener los datos de la imagen cargada
-		/// </summary>
-		/// <param name="given_width"></param>
-		/// <param name="given_height"></param>
-		void set_buffer(int given_width, int given_height) 		
-		{
-			buffer.resize(given_width * given_height);
-		}
-	};
-}
+	/// <summary>
+	/// Para poder rehacer el buffer al obtener los datos de la imagen cargada
+	/// </summary>
+	/// <param name="given_width"></param>
+	/// <param name="given_height"></param>
+	void set_buffer(int given_width, int given_height)
+	{
+		buffer.resize(given_width * given_height);
+	}
+};

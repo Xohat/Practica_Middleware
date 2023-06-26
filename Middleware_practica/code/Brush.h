@@ -10,10 +10,11 @@
 #pragma once
 
 #include "HeightBuffer.h"
+#include "API.h"
 
 namespace esne 
 {
-	class Brush
+	class API Brush
 	{
 
 	protected:
