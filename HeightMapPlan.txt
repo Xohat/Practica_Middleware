@@ -1,7 +1,5 @@
 Height map editor
 
-MIRAR FIGMA
-
 Hitos
 
 Visibilidad
